@@ -25,7 +25,7 @@ SECRET_KEY = 'pw164687+=q@g%lnurer*_%hi1=!&j2l!5xck8*m2_g3wy$0!q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['alumnosutng.azurewebsites.net']
 
 
 # Application definition
