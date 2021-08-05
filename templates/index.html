@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Listado de contacto{% endblock titulo %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    {% block content %}
+    {% block cuerpo %}
+     {% if user.is_authenticated %}
+     Hola {{ user.username }}!
+    <h1>Alumnos "Redes Inteligentes y Ciberseguridad" </h1>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Opción</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for persona in personas %}
+            <tr>
+                <td>{{persona.nombre}}</td>
+                <td>{{persona.apellido}}</td>
+                <td>{{persona.correo}}</td>
+                <td><button type="button" class="btn btn-warning"><a href="{% url 'editar_persona' persona.id %}">Editar</a></button>
+                    <button type="button" class="btn btn-danger"><a href="{% url 'eliminar_persona' persona.id %}">Eliminar</a></a></button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    {% endblock cuerpo %}
+    {% endblock %}
+</body>
+</html>
