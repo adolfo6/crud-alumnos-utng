@@ -56,7 +56,7 @@ def editarPersona(request,id):
             return redirect('index')
     return render(request, 'crear_persona.html', contexto)
 
-
+#Se agregó la función de eliminar
 def eliminarPersona(request,id):
     persona = Persona.objects.get(id = id)
     persona.delete()
