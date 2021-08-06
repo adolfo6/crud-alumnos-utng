@@ -39,6 +39,7 @@ def crearPersona(request):
 
 
 #edita por id,se obtiene la persona, si existe ese id, se llena el form, si no, se envían los datos y se edita.
+#Modificación de la función editar
 def editarPersona(request,id):
     persona = Persona.objects.get(id = id)
     if request.method == 'GET':
