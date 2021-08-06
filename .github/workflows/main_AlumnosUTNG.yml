@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'AlumnosUTNG'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_f9702db6b6904486b50aaa07eae350ed }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_610e2f1b447344669c26139d311e3b85 }}
